@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">age_calculator_app</string>
+    <string name="welcomeMessage">welcome to age calculator app :)</string>
 </resources>
