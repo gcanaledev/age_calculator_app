@@ -1,13 +1,14 @@
 <resources>
-    <string name="app_name">age_calculator_app</string>
+    <string name="app_name">age calculator app</string>
     <string name="welcomeMessage">welcome to age calculator app :)</string>
     <string name="calendarButtonText"> select age</string>
     <string name="calculateButtonText"> calculate</string>
     <string-array name="conversionOptions">
-        <item>Seconds</item>
-        <item>Minutes</item>
-        <item>Hours</item>
-        <item>Days</item>
-        <item>Months</item>
+        <item>select date format!</item>
+        <item>seconds</item>
+        <item>minutes</item>
+        <item>hours</item>
+        <item>days</item>
+        <item>months</item>
     </string-array>
 </resources>
