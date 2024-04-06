@@ -8,7 +8,11 @@ import android.widget.Button
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
+import com.example.age_calculator_app.conversionProcess.AgeConversionOperator
+import com.example.age_calculator_app.enumerator.Enumerator
+import java.text.SimpleDateFormat
 import java.util.Calendar
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,6 +28,7 @@ class MainActivity : AppCompatActivity() {
         val calculateButton = findViewById<Button>(R.id.calculateButton)
         val optionsSpinner = findViewById<Spinner>(R.id.conversionOptionsSpinner)
         val chosenDateTextView = findViewById<TextView>(R.id.chosenAgeTextView)
+        val resultTextView = findViewById<TextView>(R.id.resultTextView)
 
         fun onCalculateButtonClicked(){
 
@@ -33,6 +38,11 @@ class MainActivity : AppCompatActivity() {
 
                 return
             }
+
+            val userChosenConversionType = enumValueOf<Enumerator.ConversionOptions>(optionsSpinner.selectedItem.toString())
+            val conversionResult = AgeConversionOperator().convertAge(chosenDateTextView.text.toString(), userChosenConversionType)
+
+            resultTextView.text = String.format("your age in %s is %d!!", userChosenConversionType, conversionResult)
         }
 
         calculateButton.setOnClickListener { onCalculateButtonClicked() }
