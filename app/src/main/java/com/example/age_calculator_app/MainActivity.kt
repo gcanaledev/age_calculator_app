@@ -66,6 +66,9 @@ class MainActivity : AppCompatActivity() {
                 calendar[Calendar.MONTH],
                 calendar[Calendar.DAY_OF_MONTH])
 
+            val dayInMillisecond = 84600000
+            datePickerDialog.datePicker.maxDate = System.currentTimeMillis() - dayInMillisecond
+
             datePickerDialog.show()
         }
 
